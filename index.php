@@ -67,7 +67,7 @@ if(isset($_GET['export']) && $_GET['export'] != "")
     $handle = fopen('db-backup-'.time().'-'.(md5(implode(',',$tables))).'.sql','w+');
     if(@fwrite($handle,$return))
     {
-        echo "OK";
+        echo "Export successfully";
     }
     else
     {
@@ -79,7 +79,7 @@ if(isset($_GET['export']) && $_GET['export'] != "")
 <!DOCTYPE html>
 <html>
     <head>
-        <title>MySQL Db Exporter</title>
+        <title>MySQL Db Backup tool</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <style>
             body *
